@@ -21,6 +21,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		//http.authorizeRequests().anyRequest().authenticated().and().httpBasic().and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		http.cors().and().authorizeRequests()
             .antMatchers("/api-syscad/pessoa/auth").permitAll()
+            .antMatchers("/api-syscad/pessoa/source").permitAll()
             .antMatchers("/api-syscad/pessoa/adicionar").hasRole("ADMIN")
             .antMatchers("/api-syscad/pessoa/atualizar/*").hasRole("ADMIN")
             .antMatchers("/api-syscad/pessoa/deletar/*").hasRole("ADMIN")
