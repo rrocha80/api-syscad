@@ -7,16 +7,10 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
-/*@ComponentScan({"br.com.softplan.api.controller"})
-@EntityScan("br.com.softplan.api.domain")
-@EnableJpaRepositories("br.com.softplan.api.dao")
-@ComponentScan({"br.com.softplan.api.error"})
-@ComponentScan({"br.com.softplan.api.handler"})
-@ComponentScan({"br.com.softplan.api.config"})*/
-public class ManagerIndicadoresAPI {
+public class Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ManagerIndicadoresAPI.class, args);
+		SpringApplication.run(Application.class, args);
 
 	}
 

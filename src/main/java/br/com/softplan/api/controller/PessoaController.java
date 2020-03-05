@@ -34,6 +34,7 @@ public class PessoaController {
 	private PessoaDao pessoaDao;
 
 	private List<Pessoa> pessoaList = new ArrayList<>();
+	private List<Pessoa> pessoaBuscarList = new ArrayList<>();
 	private Pessoa buscarPessoa;
 	private Pessoa pessoa = new Pessoa();
 
@@ -50,8 +51,8 @@ public class PessoaController {
 	@CrossOrigin
 	@RequestMapping("/pesquisar")
 	public void GetByCpf(@RequestBody Pessoa pessoa) {
-		pessoaList = new ArrayList<>();
-		pessoaList = pessoaDao.findByAttributes(pessoa);
+		pessoaBuscarList = new ArrayList<>();
+		pessoaBuscarList = pessoaDao.findByAttributes(pessoa);
 		listar();
 
 	}
@@ -149,8 +150,8 @@ public class PessoaController {
 	@GetMapping("/listar_todos")
 	public Iterable<Pessoa> listar() {
 
-		if (!pessoaList.isEmpty()) {
-			return this.pessoaList;
+		if (!pessoaBuscarList.isEmpty()) {
+			return this.pessoaBuscarList;
 		}
 
 		return this.pessoaDao.findAll();
