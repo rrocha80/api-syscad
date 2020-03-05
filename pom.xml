@@ -8,6 +8,18 @@
 	<name>API Syscad</name>
 	<packaging>jar</packaging>
 
+	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Central Repository</name>
+			<url>http://insecure.repo1.maven.org/maven2/</url> <!-- the https you've been looking for -->
+			<layout>default</layout>
+			<snapshots>
+				<enabled>false</enabled> <!-- or set to true if desired, default is false -->
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>

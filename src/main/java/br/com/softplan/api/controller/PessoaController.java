@@ -1,6 +1,5 @@
 package br.com.softplan.api.controller;
 
-import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import java.util.Optional;
@@ -25,7 +24,6 @@ import br.com.softplan.api.domain.Usuario;
 import br.com.softplan.api.error.ResourceNotFoundException;
 import br.com.softplan.api.util.ClasseValidacoes;
 
-//@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
 @RequestMapping("/api-syscad/pessoa")
 public class PessoaController {
@@ -151,7 +149,7 @@ public class PessoaController {
 			throw new ResourceNotFoundException("Senha inválida!");
 		}
 		
-		String senha = new String(Base64.getEncoder().encode((usuario.getUser()+":"+usuario.getPassword()).getBytes()));
+		String senha = new String(java.util.Base64.getEncoder().encode((usuario.getUser()+":"+usuario.getPassword()).getBytes()));
 		
 		return new ResponseEntity<String>(senha, HttpStatus.OK);
 	}
