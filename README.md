@@ -21,13 +21,15 @@ pré-requisito:
 Ter uma máquina com o docker instalado, ex.: Windows.
 
 >> mvn package
+
 >> docker-compose up -d
 
 # Utilizando a aplicação
 
 Para consumir a API é necessário usa o "Postman" ou chamar o endereço a seguir num browser:
 
->> http://localhost:9000/api-syscad/pessoa/source
+>> http://localhost:9000/api-syscad/pessoa/source 
+
 >> http://localhost:9000/api-syscad/pessoa/listar_todos 
 
 Obs.: Não criei variáveis de ambiente, caso use docker é necessário executar o comando da máquina onde subiu a API. 
